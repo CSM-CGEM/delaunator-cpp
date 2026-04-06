@@ -9,6 +9,7 @@
 #include <numeric>
 #include <limits>
 #include <stdexcept>
+#include <span>
 #include <tuple>
 #include <vector>
 
@@ -173,7 +174,7 @@ inline double pseudo_angle(const double dx, const double dy) {
 }
 
 
-Delaunator::Delaunator(std::vector<double> const& in_coords)
+Delaunator::Delaunator(std::span<const double> in_coords)
     : coords(in_coords), m_points(in_coords)
 {
     std::size_t n = m_points.size();
